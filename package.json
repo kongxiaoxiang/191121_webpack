@@ -18,7 +18,41 @@
   },
   "homepage": "https://github.com/kongxiaoxiang/191121_webpack#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "core-js": "^3.6.5",
+    "css-loader": "^3.5.3",
+    "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.0.0",
+    "eslint-loader": "^4.0.2",
+    "file-loader": "^6.0.0",
+    "less": "^3.11.1",
+    "less-loader": "^6.1.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "globals": {
+      "$": "readonly",
+      "Promise": "readonly"
+    },
+    "rules": {
+      "no-console": 0,
+      "eqeqeq": 2,
+      "no-alert": 2
+    },
+    "extends": "eslint:recommended"
   }
 }
