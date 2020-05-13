@@ -1,3 +1,5 @@
+//引入html-webpack-plugin插件，用于生成html，并且资源自动引入
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 //引入path模块，专门用于解决路径相关的问题
 const path = require('path');
 /* 
@@ -55,17 +57,25 @@ module.exports = {
         }       
       },
      //使用file-loader处理less文件中的图片
-     {
+      {
       test: /\.(png|jpg|gif)$/,
       use: {
-        loader: 'file-loader',
+        loader: 'url-loader',
         options: {
           outputPath:'/imgs', //输出路径
           name:'[hash:5].[ext]', //文件命名格式
-          publicPath:'/dist/imgs' //加载图片时候的路径
+          publicPath:'/dist/imgs', //加载图片时候的路径
+          limit:8192 //图片小于8kb就做 base64的转换
         }
       }
-    }
+      }
     ]
-  }
+  },
+  //plugins里配置所有需要的插件，并且需要new
+  plugins:[
+    //new一个htmlwebpackplugin的实例
+    new HtmlWebpackPlugin({
+      template:'./src/index.html'
+    })
+  ]
 }

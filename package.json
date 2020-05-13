@@ -32,8 +32,10 @@
     "eslint": "^7.0.0",
     "eslint-loader": "^4.0.2",
     "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
     "less": "^3.11.1",
-    "less-loader": "^6.1.0"
+    "less-loader": "^6.1.0",
+    "url-loader": "^4.1.0"
   },
   "eslintConfig": {
     "parserOptions": {
