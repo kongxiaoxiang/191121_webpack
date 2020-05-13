@@ -8,7 +8,7 @@ const path = require('path');
  3.webpack的入口，输出位置，工作模式，loader，plugins均要在该对象里指定好
 */
 module.exports = {
-  entry:'./src/js/app.js',
+  entry: ['./src/js/app.js','./src/index.html'], //配置入口
   output:{
     filename:'js/app.js',//输出文件名字
     path:path.resolve(__dirname,'dist')
@@ -99,5 +99,8 @@ module.exports = {
     open: true, // 自动打开浏览器
     compress: true, // 启动gzip压缩
     port: 3000, // 端口号
-  }
+    hot:true //开启热模替换功能
+  },
+  //资源映射
+  devtool:'cheap-module-eval-source-map'
 }
