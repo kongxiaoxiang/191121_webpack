@@ -9,6 +9,7 @@ import {sub} from './module2'
 import object from './module3'
 import data from './data.json'
 import '../css/index.less'
+import '../css/iconfont.less'
 
 console.log(sum(1,2))
 console.log(sub(4,2))
